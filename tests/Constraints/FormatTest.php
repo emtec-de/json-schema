@@ -162,6 +162,8 @@ class FormatTest extends BaseTestCase
             array('a-valid-host.com', 'host-name'),
             array('localhost', 'host-name'),
 
+            array('4621834b-cc61-4ae6-a8cf-fedecccf7c7c', 'uuid'),
+
             array('anything', '*'),
             array('unknown', '*'),
         );
@@ -215,6 +217,8 @@ class FormatTest extends BaseTestCase
 
             array('@localhost', 'host-name'),
             array('..nohost', 'host-name'),
+
+            array('foo-bar', 'uuid'),
         );
     }
 

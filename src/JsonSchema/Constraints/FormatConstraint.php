@@ -142,6 +142,14 @@ class FormatConstraint extends Constraint
                 }
                 break;
 
+            case 'uuid':
+                if (!preg_match(
+                    '/^[0-9A-Fa-f]{8}-[0-9A-Fa-f]{4}-[0-9A-Fa-f]{4}-[0-9A-Fa-f]{4}-[0-9A-Fa-f]{12}$/i', $element)
+                ) {
+                    $this->addError($path, 'Invalid uuid', 'format', array('format' => $schema->format));
+                }
+                break;
+
             default:
                 // Empty as it should be:
                 // The value of this keyword is called a format attribute. It MUST be a string.
